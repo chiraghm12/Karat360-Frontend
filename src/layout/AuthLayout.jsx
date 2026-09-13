@@ -6,12 +6,12 @@ const AuthLayout = ({ children }) => {
   return (
     <div className="relative p-6 bg-gray-50 z-1 dark:bg-[#050811] sm:p-0">
       <div className="relative flex flex-col justify-center w-full h-screen lg:flex-row bg-white dark:bg-[#070a13] sm:p-0 overflow-hidden">
-        {/* Left Side: Photo with Gold & Silver Bars & Centered Karat360 Branding */}
+        {/* Left Side: Photo with Gold, Silver & Diamonds & Centered Karat360 Branding */}
         <div className="relative hidden w-full h-full lg:w-1/2 lg:flex items-center justify-center overflow-hidden">
           {/* Background image */}
           <img
             src={authBg}
-            alt="Karat360 Gold and Silver Bullion"
+            alt="Karat360 Gold, Silver Bullion and Diamonds"
             className="absolute inset-0 w-full h-full object-cover object-center"
           />
           {/* Dark luxury gradient overlay */}
