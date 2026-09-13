@@ -5,7 +5,9 @@ import {
   LuLayoutGrid,
   FaRegCircleUser,
   HiDotsHorizontal,
+  LuSettings,
 } from "../icons";
+import { Receipt, ChevronDown } from "lucide-react";
 
 import { useSidebar } from "../context/SidebarContext";
 import SidebarWidget from "./SidebarWidget";
@@ -25,10 +27,21 @@ const navItems = [
     icon: <HiDotsHorizontal className="inline-block w-5 h-5" />,
     name: "Inventory",
     path: "/shop/inventory",
-  }
+  },
+  {
+    icon: <Receipt className="inline-block w-4 h-4" />,
+    name: "Invoices",
+    path: "/shop/invoices",
+  },
 ];
 
-const othersItems = [];
+const othersItems = [
+  {
+    icon: <LuSettings className="inline-block w-4 h-4" />,
+    name: "Account Settings",
+    path: "/settings",
+  },
+];
 // const othersItems = [
 //   {
 //     icon: <PieChartIcon />,
@@ -149,7 +162,7 @@ const AppSidebar = () => {
                 <span className="menu-item-text">{nav.name}</span>
               )}
               {(isExpanded || isHovered || isMobileOpen) && (
-                <ChevronDownIcon
+                <ChevronDown
                   className={`ml-auto w-5 h-5 transition-transform duration-200 ${
                     openSubmenu?.type === menuType &&
                     openSubmenu?.index === index

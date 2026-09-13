@@ -18,6 +18,9 @@ import ResetPassword from './pages/auth/ResetPassword';
 import ShopDashboard from './pages/shop/ShopDashboard';
 import Customers from './pages/shop/Customers';
 import Inventory from './pages/shop/Inventory';
+import Invoices from './pages/shop/Invoices';
+import UserProfile from './pages/profile/UserProfile';
+import AccountSettings from './pages/settings/AccountSettings';
 
 function App() {
   return (
@@ -43,6 +46,11 @@ function App() {
                   <Route path="/shop/dashboard" element={<ShopDashboard />} />
                   <Route path="/shop/customers" element={<Customers />} />
                   <Route path="/shop/inventory" element={<Inventory />} />
+                  <Route path="/shop/invoices" element={<Invoices />} />
+                  <Route path="/profile" element={<UserProfile />} />
+                  <Route path="/settings" element={<AccountSettings />} />
+                  <Route path="/shop/profile" element={<UserProfile />} />
+                  <Route path="/shop/settings" element={<AccountSettings />} />
                 </Route>
 
                 <Route path="*" element={<Navigate to="/shop/dashboard" replace />} />

@@ -5,7 +5,7 @@ const SidebarWidget = () => {
   const series = [75.55];
 
   const options = {
-    colors: ["#465FFF"],
+    colors: ["#f59e0b"],
     chart: {
       fontFamily: "Outfit, sans-serif",
       type: "radialBar",
@@ -44,7 +44,7 @@ const SidebarWidget = () => {
     },
     fill: {
       type: "solid",
-      colors: ["#465FFF"],
+      colors: ["#f59e0b"],
     },
     stroke: {
       lineCap: "round",

@@ -159,7 +159,7 @@ layer(base);
   --shadow-theme-xl: 0px 20px 24px -4px rgba(16, 24, 40, 0.08),
     0px 8px 8px -4px rgba(16, 24, 40, 0.03);
   --shadow-datepicker: -5px 0 0 #262d3c, 5px 0 0 #262d3c;
-  --shadow-focus-ring: 0px 0px 0px 4px rgba(70, 95, 255, 0.12);
+  --shadow-focus-ring: 0px 0px 0px 4px rgba(245, 158, 11, 0.2);
   --shadow-slider-navigation: 0px 1px 2px 0px rgba(16, 24, 40, 0.1),
     0px 1px 3px 0px rgba(16, 24, 40, 0.1);
   --shadow-tooltip: 0px 4px 6px -2px rgba(16, 24, 40, 0.05),
@@ -203,19 +203,19 @@ layer(base);
 }
 
 @utility menu-item {
-  @apply relative flex items-center w-full gap-3 px-3 py-2 font-medium rounded-lg text-theme-sm;
+  @apply relative flex items-center w-full gap-3 px-3.5 py-2.5 font-medium rounded-xl text-theme-sm transition-all duration-200 ease-in-out;
 }
 
 @utility menu-item-active {
-  @apply bg-brand-50 text-brand-500 dark:bg-brand-500/[0.12] dark:text-brand-400;
+  @apply bg-brand-500/15 text-brand-500 font-semibold border border-brand-500/30 shadow-[0_2px_14px_-2px_rgba(245,158,11,0.25)] dark:bg-brand-500/[0.18] dark:text-brand-400 dark:border-brand-500/30 dark:shadow-[0_2px_14px_-2px_rgba(245,158,11,0.3)];
 }
 
 @utility menu-item-inactive {
-  @apply text-gray-700 hover:bg-gray-100 group-hover:text-gray-700 dark:text-gray-300 dark:hover:bg-white/5 dark:hover:text-gray-300;
+  @apply text-gray-600 border border-transparent hover:bg-brand-500/10 hover:text-brand-500 group-hover:text-brand-500 hover:border-brand-500/20 hover:shadow-[0_2px_12px_-2px_rgba(245,158,11,0.22)] dark:text-gray-400 dark:hover:bg-brand-500/15 dark:hover:text-brand-400 dark:group-hover:text-brand-400 dark:hover:border-brand-500/25 dark:hover:shadow-[0_2px_12px_-2px_rgba(245,158,11,0.28)];
 }
 
 @utility menu-item-icon {
-  @apply text-gray-500 group-hover:text-gray-700 dark:text-gray-400;
+  @apply text-gray-500 group-hover:text-brand-500 dark:text-gray-400 dark:group-hover:text-brand-400 transition-colors duration-200;
 }
 
 @utility menu-item-icon-active {
@@ -224,12 +224,16 @@ layer(base);
 
 @utility menu-item-icon-size {
   & svg {
-    @apply !size-6;
+    @apply !size-5;
   }
 }
 
 @utility menu-item-icon-inactive {
-  @apply text-gray-500 group-hover:text-gray-700 dark:text-gray-400 dark:group-hover:text-gray-300;
+  @apply text-gray-500 group-hover:text-brand-500 dark:text-gray-400 dark:group-hover:text-brand-400 transition-colors duration-200;
+}
+
+@utility menu-item-text {
+  @apply transition-colors duration-200 group-hover:text-brand-500 dark:group-hover:text-brand-400;
 }
 
 @utility menu-item-arrow {
@@ -241,31 +245,31 @@ layer(base);
 }
 
 @utility menu-item-arrow-inactive {
-  @apply text-gray-500 group-hover:text-gray-700 dark:text-gray-400 dark:group-hover:text-gray-300;
+  @apply text-gray-400 group-hover:text-brand-500 dark:text-gray-500 dark:group-hover:text-brand-400 transition-colors duration-200;
 }
 
 @utility menu-dropdown-item {
-  @apply relative flex items-center gap-3 rounded-lg px-3 py-2.5 text-theme-sm font-medium;
+  @apply relative flex items-center gap-3 rounded-xl px-3.5 py-2 text-theme-sm font-medium transition-all duration-200 ease-in-out;
 }
 
 @utility menu-dropdown-item-active {
-  @apply bg-brand-50 text-brand-500 dark:bg-brand-500/[0.12] dark:text-brand-400;
+  @apply bg-brand-500/15 text-brand-500 font-semibold border border-brand-500/30 shadow-[0_2px_10px_-2px_rgba(245,158,11,0.2)] dark:bg-brand-500/[0.18] dark:text-brand-400 dark:border-brand-500/30;
 }
 
 @utility menu-dropdown-item-inactive {
-  @apply text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-white/5;
+  @apply text-gray-600 border border-transparent hover:bg-brand-500/10 hover:text-brand-500 hover:border-brand-500/20 hover:shadow-[0_2px_10px_-2px_rgba(245,158,11,0.18)] dark:text-gray-400 dark:hover:bg-brand-500/15 dark:hover:text-brand-400 dark:hover:border-brand-500/25;
 }
 
 @utility menu-dropdown-badge {
-  @apply block rounded-full px-2.5 py-0.5 text-xs font-medium uppercase text-brand-500 dark:text-brand-400;
+  @apply block rounded-full px-2.5 py-0.5 text-xs font-medium uppercase transition-colors duration-200;
 }
 
 @utility menu-dropdown-badge-active {
-  @apply bg-brand-100 dark:bg-brand-500/20;
+  @apply bg-brand-500/20 text-brand-600 dark:bg-brand-500/30 dark:text-brand-300;
 }
 
 @utility menu-dropdown-badge-inactive {
-  @apply bg-brand-50 group-hover:bg-brand-100 dark:bg-brand-500/15 dark:group-hover:bg-brand-500/20;
+  @apply bg-gray-100 text-gray-500 group-hover:bg-brand-500/20 group-hover:text-brand-600 dark:bg-white/5 dark:text-gray-400 dark:group-hover:bg-brand-500/25 dark:group-hover:text-brand-300;
 }
 @utility no-scrollbar {
   /* Chrome, Safari and Opera */
@@ -529,13 +533,13 @@ span.flatpickr-weekday,
 .flatpickr-day.selected.nextMonthDay,
 .flatpickr-day.startRange.nextMonthDay,
 .flatpickr-day.endRange.nextMonthDay {
-  background: #465fff;
+  background: #f59e0b;
   @apply !border-brand-500 !bg-brand-500 hover:!border-brand-500 hover:!bg-brand-500;
 }
 .flatpickr-day.selected.startRange + .endRange:not(:nth-child(7n + 1)),
 .flatpickr-day.startRange.startRange + .endRange:not(:nth-child(7n + 1)),
 .flatpickr-day.endRange.startRange + .endRange:not(:nth-child(7n + 1)) {
-  box-shadow: -10px 0 0 #465fff;
+  box-shadow: -10px 0 0 #f59e0b;
 }
 
 .flatpickr-months .flatpickr-prev-month svg,
@@ -694,15 +698,15 @@ span.flatpickr-weekday,
 }
 
 .total-card {
-  @apply rounded-2xl border border-brand-600 bg-brand-600 p-5 md:p-6 shadow-[0_1px_3px_0_rgba(70,95,255,0.3),0_1px_2px_0_rgba(70,95,255,0.03)] dark:border-brand-600 dark:bg-brand-600 dark:shadow-[0_1px_3px_0_rgba(70,95,255,0.3),0_1px_2px_-1px_rgba(70,95,255,0.03)] hover:shadow-[0_1px_8px_3px_rgba(54,65,245,0.2),0_1px_2px_1px_rgba(54,65,245,0.1)] dark:hover:shadow-[0_1px_8px_3px_rgba(54,65,245,0.2),0_1px_2px_1px_rgba(54,65,245,0.1)] transition-all duration-200
+  @apply rounded-2xl border border-brand-600 bg-brand-600 p-5 md:p-6 shadow-[0_1px_3px_0_rgba(245,158,11,0.25),0_1px_2px_0_rgba(0,0,0,0.05)] dark:border-brand-600 dark:bg-brand-600 dark:shadow-[0_1px_3px_0_rgba(0,0,0,0.4),0_1px_2px_-1px_rgba(0,0,0,0.2)] hover:shadow-[0_4px_20px_-2px_rgba(245,158,11,0.35),0_2px_8px_-1px_rgba(245,158,11,0.2)] dark:hover:shadow-[0_4px_20px_-2px_rgba(245,158,11,0.4),0_2px_8px_-1px_rgba(245,158,11,0.25)] transition-all duration-200
 }
 
 .card {
-  @apply rounded-2xl border border-gray-200 bg-white p-5 md:p-6 shadow-[0_1px_3px_0_rgba(70,95,255,0.3),0_1px_2px_0_rgba(70,95,255,0.03)] dark:border-gray-800 dark:bg-white/[0.03] dark:shadow-[0_1px_3px_0_rgba(70,95,255,0.3),0_1px_2px_-1px_rgba(70,95,255,0.03)] hover:shadow-[0_1px_8px_3px_rgba(54,65,245,0.2),0_1px_2px_1px_rgba(54,65,245,0.1)] dark:hover:shadow-[0_1px_8px_3px_rgba(54,65,245,0.2),0_1px_2px_1px_rgba(54,65,245,0.1)] transition-all duration-200
+  @apply rounded-2xl border border-gray-200 bg-white p-5 md:p-6 shadow-[0_1px_3px_0_rgba(0,0,0,0.05),0_1px_2px_0_rgba(0,0,0,0.03)] dark:border-gray-800 dark:bg-white/[0.03] dark:shadow-[0_1px_3px_0_rgba(0,0,0,0.4),0_1px_2px_-1px_rgba(0,0,0,0.2)] hover:shadow-[0_4px_20px_-2px_rgba(245,158,11,0.22),0_2px_8px_-1px_rgba(245,158,11,0.12)] dark:hover:shadow-[0_4px_20px_-2px_rgba(245,158,11,0.28),0_2px_8px_-1px_rgba(245,158,11,0.15)] hover:border-amber-400/40 dark:hover:border-amber-400/30 transition-all duration-200
 }
 
 .chart-card {
-  @apply rounded-2xl border border-gray-200 bg-white p-5 md:p-6 shadow-[0_1px_3px_0_rgba(70,95,255,0.3),0_1px_2px_0_rgba(70,95,255,0.03)] dark:border-gray-800 dark:bg-white/[0.03] dark:shadow-[0_1px_3px_0_rgba(70,95,255,0.3),0_1px_2px_-1px_rgba(70,95,255,0.03)]
+  @apply rounded-2xl border border-gray-200 bg-white p-5 md:p-6 shadow-[0_1px_3px_0_rgba(0,0,0,0.05),0_1px_2px_0_rgba(0,0,0,0.03)] dark:border-gray-800 dark:bg-white/[0.03] dark:shadow-[0_1px_3px_0_rgba(0,0,0,0.4),0_1px_2px_-1px_rgba(0,0,0,0.2)] hover:shadow-[0_4px_20px_-2px_rgba(245,158,11,0.22),0_2px_8px_-1px_rgba(245,158,11,0.12)] dark:hover:shadow-[0_4px_20px_-2px_rgba(245,158,11,0.28),0_2px_8px_-1px_rgba(245,158,11,0.15)] hover:border-amber-400/40 dark:hover:border-amber-400/30 transition-all duration-200
 }
 
 .swiper-button-prev svg,

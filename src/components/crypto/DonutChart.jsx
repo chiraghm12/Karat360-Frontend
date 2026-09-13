@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from "react";
 import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
-import { formatCurrency } from "../../utils";
+import { formatCurrency } from "../../utils/formatters";
 
 const DonutChart = ({ data, totalValue }) => {
     const [activeIndex, setActiveIndex] = useState(null);

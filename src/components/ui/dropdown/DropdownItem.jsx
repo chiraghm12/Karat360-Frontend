@@ -5,7 +5,7 @@ const DropdownItem = ({
   to,
   onClick,
   onItemClick,
-  baseClassName = "block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900",
+  baseClassName = "block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-brand-500/10 hover:text-brand-500 dark:text-gray-300 dark:hover:bg-brand-500/15 dark:hover:text-brand-400 transition-colors duration-150 rounded-lg",
   className = "",
   children,
 }) => {
